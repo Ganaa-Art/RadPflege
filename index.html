@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Fahrrad Reinigung · Geretsried</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --bg:#f4f9f5;
+    --white:#ffffff;
+    --dark:#1a2e1e;
+    --brown:#2d5c38;
+    --tan:#4a9c5d;
+    --cream:#e8f4eb;
+    --muted:#5a7d62;
+    --border:#c2ddc8;
+    --green-dark:#1a2e1e;
+    --wa:#25D366;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:rgba(244,249,245,.93);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 2rem;}
+  .nav-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:60px;}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;letter-spacing:.02em;color:var(--dark);}
+  .nav-logo span{color:var(--tan);}
+  .nav-wa{display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;text-decoration:none;padding:8px 18px;border-radius:4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:400;transition:opacity .15s;}
+  .nav-wa:hover{opacity:.85;}
+  .nav-wa svg{width:16px;height:16px;fill:#fff;flex-shrink:0;}
+
+  /* HERO */
+  .hero{background:#1a2e1e;position:relative;overflow:hidden;padding:5rem 2rem 4rem;}
+  .hero-deco{position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(74,156,93,.10);}
+  .hero-deco2{position:absolute;bottom:-60px;left:-40px;width:260px;height:260px;border-radius:50%;background:rgba(74,156,93,.06);}
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7ecf90;font-weight:400;margin-bottom:1.4rem;}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:500;line-height:1.0;color:#fff;margin-bottom:1.2rem;letter-spacing:-.01em;}
+  .hero h1 em{font-style:italic;color:#7ecf90;}
+  .hero-sub{font-size:14px;color:rgba(255,255,255,.55);line-height:1.9;max-width:420px;font-weight:300;margin-bottom:2.5rem;}
+  .hero-btns{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .btn-primary{display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;text-decoration:none;padding:13px 26px;border-radius:4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:400;transition:opacity .15s;}
+  .btn-primary:hover{opacity:.85;}
+  .btn-primary svg{width:17px;height:17px;fill:#fff;}
+  .btn-ghost{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.06em;border-bottom:1px solid rgba(74,156,93,.5);padding-bottom:2px;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;}
+
+  /* STATS */
+  .stats-row{background:var(--cream);border-bottom:0.5px solid var(--border);}
+  .stats-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);padding:2rem;}
+  .stat{text-align:center;padding:1rem;}
+  .stat + .stat{border-left:0.5px solid var(--border);}
+  .stat-n{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--tan);font-weight:400;line-height:1;}
+  .stat-l{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:6px;}
+
+  /* MAIN */
+  main{max-width:960px;margin:0 auto;padding:3rem 2rem 4rem;}
+
+  /* SECTION HEADER */
+  .sec-head{margin-bottom:2rem;}
+  .sec-head h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;margin-bottom:.3rem;}
+  .sec-head p{font-size:13px;color:var(--muted);font-weight:300;}
+
+  /* PACKAGES */
+  .pkgs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:3rem;}
+  .pkg{background:var(--white);border:0.5px solid var(--border);border-radius:12px;padding:1.6rem 1.4rem;position:relative;}
+  .pkg.sig{background:var(--cream);border-color:var(--tan);}
+  .pkg.full{grid-column:span 2;}
+  .pkg-tag{position:absolute;top:16px;right:16px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:#1a2e1e;color:#c8efd0;padding:4px 10px;border-radius:2px;}
+  .pkg-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;margin-bottom:.3rem;}
+  .pkg-price{font-size:13px;color:var(--brown);margin-bottom:1rem;letter-spacing:.03em;}
+  .pkg-price span{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;color:var(--dark);margin-right:4px;}
+  .pkg-list{list-style:none;margin-bottom:1.2rem;}
+  .pkg-list li{font-size:12.5px;color:#2d4a32;padding:6px 0;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:10px;font-weight:300;line-height:1.5;}
+  .pkg-list li:last-child{border-bottom:none;}
+  .pkg-list li::before{content:'–';color:var(--tan);flex-shrink:0;}
+  .pkg-btn{display:block;width:100%;padding:11px;background:transparent;border:0.5px solid var(--tan);border-radius:4px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;color:var(--brown);text-align:center;text-decoration:none;transition:all .15s;}
+  .pkg.sig .pkg-btn{background:#1a2e1e;color:#fff;border-color:#1a2e1e;}
+  .pkg-btn:hover{opacity:.75;}
+  .atelier-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:1rem 0 1.4rem;}
+  .at-item{background:var(--cream);border-radius:8px;padding:10px 12px;font-size:11.5px;color:#2d5c38;line-height:1.6;font-weight:300;}
+  .at-item strong{display:block;font-weight:500;color:var(--dark);margin-bottom:2px;font-size:12px;}
+
+  /* NOT BOX */
+  .not-box{background:#1a2e1e;border-radius:12px;padding:2rem;margin-bottom:3rem;}
+  .not-box h2{font-family:'Cormorant Garamond',serif;font-size:26px;color:#fff;font-weight:400;margin-bottom:1.2rem;}
+  .not-box h2 em{font-style:italic;color:#7ecf90;}
+  .not-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
+  .not-item{padding:14px 16px;background:rgba(255,255,255,.05);border:0.5px solid rgba(255,255,255,.10);border-radius:8px;}
+  .not-item strong{display:block;font-size:13px;color:#c8efd0;font-weight:400;margin-bottom:4px;}
+  .not-item p{font-size:12px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6;}
+
+  /* PROCESS */
+  .process{margin-bottom:3rem;}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem;position:relative;}
+  .steps::before{content:'';position:absolute;top:20px;left:10%;right:10%;height:0.5px;background:var(--border);}
+  .step{text-align:center;position:relative;}
+  .step-n{width:40px;height:40px;border-radius:50%;background:var(--cream);border:0.5px solid var(--tan);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--brown);position:relative;z-index:1;}
+  .step h4{font-size:13px;font-weight:500;margin-bottom:4px;}
+  .step p{font-size:11.5px;color:var(--muted);font-weight:300;line-height:1.5;}
+
+  /* FOOTER CTA */
+  .footer-cta{background:var(--cream);border:0.5px solid var(--border);border-radius:12px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+  .footer-cta h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;}
+  .footer-cta p{font-size:13px;color:var(--muted);margin-top:4px;font-weight:300;}
+
+  /* FOOTER */
+  footer{border-top:0.5px solid var(--border);padding:1.5rem 2rem;text-align:center;}
+  footer p{font-size:11px;color:var(--muted);font-weight:300;letter-spacing:.04em;}
+
+  /* WHATSAPP FLOAT */
+  .wa-float{position:fixed;bottom:24px;right:24px;z-index:999;}
+  .wa-float a{display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;padding:13px 20px;border-radius:50px;font-size:13px;font-weight:400;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .15s,box-shadow .15s;}
+  .wa-float a:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,211,102,.4);}
+  .wa-float svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
+
+  @media(max-width:640px){
+    .pkgs{grid-template-columns:1fr;}
+    .pkg.full{grid-column:span 1;}
+    .atelier-grid{grid-template-columns:1fr 1fr;}
+    .not-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .steps::before{display:none;}
+    .stats-inner{grid-template-columns:1fr;}
+    .stat+.stat{border-left:none;border-top:0.5px solid var(--border);}
+    .footer-cta{flex-direction:column;text-align:center;}
+    .nav-inner{gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Rad<span>Pflege</span> Geretsried</div>
+    <a class="nav-wa" href="https://wa.me/491778637718?text=Servus%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20die%20Fahrradreinigung%20buchen." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-deco"></div>
+  <div class="hero-deco2"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">Geretsried · Premium Fahrradpflege</div>
+    <h1>Kein Schrauben.<br><em>Nur Reinheit.</em></h1>
+    <p class="hero-sub">Keine Reparaturen. Professionelle Fahrradreinigung und Pflege — für Liebhaber, die das Beste für ihr Rad wollen.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://wa.me/491778637718?text=Servus%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20die%20Fahrradreinigung%20buchen." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Termin via WhatsApp
+      </a>
+      <button class="btn-ghost" onclick="document.getElementById('pakete').scrollIntoView({behavior:'smooth'})">Pakete ansehen ↓</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Kein Werkzeug</div></div>
+    <div class="stat"><div class="stat-n">4 h</div><div class="stat-l">Bearbeitungszeit</div></div>
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Handarbeit</div></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- PACKAGES -->
+  <section id="pakete">
+    <div class="sec-head">
+      <h2>Unsere Pakete</h2>
+      <p>Keine Reparaturen — nur professionelle Reinigung & Pflege</p>
+    </div>
+    <div class="pkgs">
+      <div class="pkg">
+        <div class="pkg-name">Basic Reinigung</div>
+        <div class="pkg-price"><span>20€</span>Schnelle Grundreinigung</div>
+        <ul class="pkg-list">
+          <li>Rahmen & Anbauteile</li>
+          <li>Laufräder & Reifen</li>
+          <li>Cockpit & Sattel</li>
+        </ul>
+        <a class="pkg-btn" href="https://wa.me/491778637718?text=Servus%2C%20ich%20m%C3%B6chte%20die%20Basic%20Reinigung%20(20%E2%82%AC)%20buchen." target="_blank" rel="noopener">Jetzt buchen</a>
+      </div>
+      <div class="pkg sig">
+        <div class="pkg-tag">Beliebt</div>
+        <div class="pkg-name">Komplett Reinigung</div>
+        <div class="pkg-price"><span>30€</span>Gründliche Reinigung</div>
+        <ul class="pkg-list">
+          <li>Alles aus Basic</li>
+          <li>Antrieb & Kette gereinigt</li>
+          <li>Rahmen poliert</li>
+          <li>Fotos vor & nach</li>
+        </ul>
+        <a class="pkg-btn" href="https://wa.me/491778637718?text=Servus%2C%20ich%20m%C3%B6chte%20die%20Komplett%20Reinigung%20(30%E2%82%AC)%20buchen." target="_blank" rel="noopener">Jetzt buchen</a>
+      </div>
+      <div class="pkg">
+        <div class="pkg-name">Reinigung + Kette ölen</div>
+        <div class="pkg-price"><span>35€</span>Komplett mit Kettenpflege</div>
+        <ul class="pkg-list">
+          <li>Alles aus Komplett</li>
+          <li>Kette professionell geölt</li>
+          <li>Schaltung läuft wieder rund</li>
+        </ul>
+        <a class="pkg-btn" href="https://wa.me/491778637718?text=Servus%2C%20ich%20m%C3%B6chte%20Reinigung%20%2B%20Kette%20%C3%B6len%20(35%E2%82%AC)%20buchen." target="_blank" rel="noopener">Jetzt buchen</a>
+      </div>
+      <div class="pkg" style="background:#e8f4eb;border-color:#4a9c5d;">
+        <div class="pkg-name">Abholung & Lieferung</div>
+        <div class="pkg-price"><span>+5–10€</span>Nur in Geretsried</div>
+        <ul class="pkg-list">
+          <li>Ich hole Ihr Rad ab</li>
+          <li>Gereinigt zurückgeliefert</li>
+          <li>Preis je nach Entfernung</li>
+        </ul>
+        <a class="pkg-btn" href="https://wa.me/491778637718?text=Servus%2C%20ich%20m%C3%B6chte%20Abholung%20%26%20Lieferung%20in%20Geretsried%20anfragen." target="_blank" rel="noopener">Anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜBER MICH -->
+  <section style="margin-bottom:3rem;">
+    <div style="background:#fff;border:0.5px solid #c2ddc8;border-radius:12px;padding:2rem;display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;">
+      <div style="width:64px;height:64px;border-radius:50%;background:#e8f4eb;border:2px solid #4a9c5d;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:#2d5c38;">G</div>
+      <div style="flex:1;min-width:200px;">
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#4a9c5d;margin-bottom:.4rem;font-weight:400;">Über mich</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:#1a2e1e;margin-bottom:.6rem;">Ich bin Ganaa</h3>
+        <p style="font-size:13.5px;color:#2d5c38;line-height:1.85;font-weight:300;">Ich mache gerade meine Ausbildung zum Zweiradmechatroniker — ich kenne Fahrräder also von innen und außen. In meiner Freizeit reinige ich Räder mit echter Leidenschaft und vollem Einsatz. Kein Betrieb, kein Team — nur ich, dein Rad und die Überzeugung, dass es danach besser aussieht als je zuvor.</p>
+        <div style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:11px;background:#e8f4eb;color:#2d5c38;padding:5px 12px;border-radius:20px;border:0.5px solid #c2ddc8;">Zweiradmechatroniker i.A.</span>
+          <span style="font-size:11px;background:#e8f4eb;color:#2d5c38;padding:5px 12px;border-radius:20px;border:0.5px solid #c2ddc8;">Geretsried</span>
+          <span style="font-size:11px;background:#e8f4eb;color:#2d5c38;padding:5px 12px;border-radius:20px;border:0.5px solid #c2ddc8;">Mit Leidenschaft dabei</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOT BOX -->
+  <div class="not-box">
+    <h2>Was ich <em>nicht</em> mache — und warum das gut ist</h2>
+    <div class="not-grid">
+      <div class="not-item"><strong>Keine Reparaturen</strong><p>Kein Schrauben, kein Ersetzen. Nur Reinigung & Pflege — das mache ich besser als alle anderen.</p></div>
+      <div class="not-item"><strong>Kein Warten</strong><p>Termine pünktlich. Ihr Rad pünktlich zurück. Keine Überraschungen.</p></div>
+      <div class="not-item"><strong>Kein Upselling</strong><p>Ich empfehle nur, was Ihr Rad wirklich braucht — ohne versteckte Kosten.</p></div>
+      <div class="not-item"><strong>Kein billiges Öl</strong><p>Nur Markenpflegemittel — Muc-Off, Finish Line, Motorex. Immer.</p></div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="sec-head">
+      <h2>So funktioniert's</h2>
+      <p>Vier einfache Schritte zu einem strahlenden Fahrrad</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><h4>Kontakt</h4><p>Per WhatsApp Termin vereinbaren</p></div>
+      <div class="step"><div class="step-n">2</div><h4>Anliefern</h4><p>Rad vorbeibringen oder ich hole es ab</p></div>
+      <div class="step"><div class="step-n">3</div><h4>Reinigung</h4><p>Ich pflege Ihr Rad in 4 Stunden</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Abholen</h4><p>Strahlend sauberes Rad zurück</p></div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <div>
+      <h3>Bereit für ein sauberes Rad?</h3>
+      <p>Geretsried & Umgebung · Hausbesuche auf Anfrage</p>
+    </div>
+    <a class="btn-primary" href="https://wa.me/491778637718?text=Servus%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20die%20Fahrradreinigung%20buchen." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Termin via WhatsApp
+    </a>
+  </div>
+
+</main>
+
+<!-- LEGAL DISCLAIMER -->
+<div style="max-width:960px;margin:0 auto;padding:1rem 2rem 0;text-align:center;">
+  <p style="font-size:11px;color:#5a7d62;line-height:1.7;font-family:'Jost',sans-serif;font-weight:300;">Es werden keine Reparaturen oder sicherheitsrelevanten Arbeiten durchgeführt.<br>Die Dienstleistung umfasst ausschließlich Reinigung und Pflege von Fahrrädern.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 RadPflege Geretsried · Kein Werkzeug. Nur Reinheit. · <a href="https://wa.me/491778637718" style="color:inherit;">+49 177 863 7718</a></p>
+  <p style="margin-top:8px;">
+    <a href="impressum.html" style="color:#5a7d62;font-size:11px;text-decoration:none;margin:0 8px;">Impressum</a> ·
+    <a href="datenschutz.html" style="color:#5a7d62;font-size:11px;text-decoration:none;margin:0 8px;">Datenschutz</a>
+  </p>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<div class="wa-float">
+  <a href="https://wa.me/491778637718?text=Servus%2C%20ich%20m%C3%B6chte%20einen%20Termin%20f%C3%BCr%20die%20Fahrradreinigung%20buchen." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Termin buchen
+  </a>
+</div>
+
+</body>
+</html>
